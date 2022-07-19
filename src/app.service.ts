@@ -20,7 +20,11 @@ export class AppService {
       return res.send(new BadRequestException('Request is not multipart'))
     }
     const data = await req.file()
-    const siteDomain = `${data.fields['subdomain']['value']}.hostnow.site`
+    const { subdomain } = data.fields
+    if(!subdomain || !subdomain.value.trim()){
+      return res.send(new BadRequestException('Subdomain value is required'))
+    }
+    const siteDomain = `${subdomain.value.trim().toLowerCase()}.hostnow.site`
     const sitePath = `/srv/sites/${siteDomain}`
     await fse.remove(sitePath)
     await this.handleZipFile(data, sitePath)

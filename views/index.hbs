@@ -10,17 +10,15 @@
     <link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/@tabler/core@1.0.0-beta10/dist/js/tabler.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/@tabler/core@1.0.0-beta10/dist/css/tabler.min.css">
-    <style>
+    {{!-- <style>
       #upload-site-form input[type="text"] {
           text-transform: lowercase;
       }
-    </style>
+    </style> --}}
   </head>
   <body class="bg-dark">
     <header class="text-center my-2">
-      <a href="/">
-          <img class="img-fluid" width="50%" src="/public/images/logo-banner.png">
-      </a>
+      <img class="img-fluid" width="50%" src="/public/images/logo-banner.png">
     </header>
     <main class="container text-center">
       <div class="row justify-content-center">
@@ -30,7 +28,7 @@
                 <span class="input-group-text">
                 https://
                 </span>
-                <input type="text" class="form-control" title="Enter valid subdomain" pattern="^([a-zA-Z0-9]){1,63}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" name="subdomain" placeholder="subdomain" autocomplete="off" required=true>
+                <input type="text" class="form-control text-lowercase" title="Enter valid subdomain" pattern="^([a-zA-Z0-9]){1,63}(?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$" name="subdomain" placeholder="subdomain" autocomplete="off" required=true>
                 <span class="input-group-text">
                 .hostnow.site
                 </span>
